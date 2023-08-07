@@ -1,0 +1,282 @@
+/*
+=============== 
+Fonts
+===============
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap');
+
+/*
+=============== 
+Variables
+===============
+*/
+
+:root {
+    --attribution-pink: hsl(356, 100%, 78%);
+    --attribution-hover: hsl(356,	100%,	70%);
+    /* primary colors */
+    --orange: hsl(25, 97%, 53%);
+
+    /* neutrals */
+    --white: hsl(0, 0%, 100%);
+    --light-gray: hsl(217, 12%, 63%);
+    --medium-gray: hsl(216, 12%, 54%);
+    --blue: hsl(213, 19%, 18%);
+    --dark-blue: hsl(216, 12%, 8%);
+    --black: hsl(0, 0%, 0%,);
+
+    /* typography */
+    --font-primary: 'Overpass', sans-serif;
+
+    --transition: all 0.3s linear;
+}
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body {
+    font-family: var(--font-primary);
+}
+ul {
+    list-style: none;
+}
+.attribution { 
+  font-size: 12px; 
+  text-align: center;
+  word-spacing: 1px;
+  letter-spacing: 0.5px;
+  color: var(--white);
+}
+.attribution a { 
+  color: var(--attribution-pink);
+  transition: var(--transition);
+}
+.attribution a:hover {
+  color: var(--attribution-hover);
+}
+/*
+====================
+Rating State Design
+====================
+*/
+body {
+  background-color: var(--dark-blue);
+  font-family: var(--font-primary);
+}
+.container {
+  position: relative;
+  width: fit-content;
+  margin: 0 auto;
+  height: fit-content;
+}
+.wrapper {
+  display: block;
+  width: min-content;
+  text-align: center;
+  margin: 20vh auto;
+  margin-bottom: 1.5rem;
+  position: relative;
+  height: auto;
+}
+.rs-wrapper {
+  background: linear-gradient(180deg, var(--blue), var(--dark-blue));
+  background-size: 50% 120%;
+  text-align: left;
+  border-radius: 15px;
+  padding: 2rem;
+  z-index: 100;
+}
+.star-icon {
+  background-color: hsla(216, 12%, 54%, 0.1);
+  border-radius: 50%;
+  padding: 1rem;
+}
+.rs-header {
+  color: var(--white);
+  font-weight: 400;
+  padding: 1rem 0;
+}
+.rs-desc {
+  color: var(--medium-gray);
+  font-weight: 400;
+  font-size: 15px;
+}
+.ratings ul {
+  display: flex;
+  width: max-content;
+}
+.ratings li {
+  padding-top: 1rem;
+}
+.li1,
+.li2,
+.li3,
+.li4 {
+  padding-left: 0rem;
+  padding-right: 1.5rem;
+}
+.r-btn {
+  background-color: hsla(216, 12%, 54%, 0.1);
+  color: var(--medium-gray);
+  border-color: transparent;
+  border-radius: 50%;
+  height: 3rem;
+  width: 3rem;
+  font-weight: 700;
+}
+.submit {
+  text-align: center;
+  padding-top: 2rem;
+  position: relative;
+}
+.submit button {
+  text-align: center;
+  background-color: var(--orange);
+  color: var(--white);
+  border-color: transparent;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 0.5rem;
+  width: 100%;
+  font-weight: 400;
+  transition: var(--transition);
+}
+/*
+=======================
+Thank You State Design
+=======================
+*/
+.ty-wrapper {
+  background: linear-gradient(180deg, var(--blue), var(--dark-blue));
+  background-size: 50% 120%;
+  text-align: left;
+  border-radius: 15px;
+  padding: 2rem 2rem;
+  text-align: center;
+}
+.ty-selection {
+  width: min-content;
+  white-space: nowrap;
+  display: flex;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: 400;
+  background-color: hsla(216, 12%, 54%, 0.1);
+  color: var(--orange);
+  border-radius: 20px;
+  padding: 0.5rem 1rem;
+  margin:1rem auto;
+  margin-bottom: 0;
+  margin-top: 1.5rem;
+}
+.ty-header {
+  display: flex;
+  justify-content: center;
+  flex-wrap:nowrap;
+  padding: 1.5rem;
+  padding-bottom: 1rem;
+  color: var(--white);
+  white-space: nowrap;
+  font-weight: 400;
+}
+.ty-desc {
+  color: var(--light-gray);
+  font-weight: 400;
+  font-size: 15px;
+  width: fit-content;
+}
+.ty-wrapper {
+  position: absolute;
+  top: 0;
+  left:0;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+}
+/*
+=============== 
+Active/Toggle
+===============
+*/
+.r-btn:hover {
+  cursor: pointer;
+  background-color: var(--orange);
+  color: var(--white);
+}
+.submit button:hover {
+  cursor: pointer;
+  background-color: var(--white);
+  color: var(--orange);
+}
+.rating-select:hover {
+  cursor: pointer;
+  background-color: var(--light-gray);
+  color: var(--white);
+}
+.rating-select {
+  cursor: pointer;
+  background-color: var(--light-gray);
+  color: var(--white);
+  transition: var(--transition);
+}
+.submit-toggle {
+  visibility: hidden;
+}
+.ty-toggle {
+  visibility: visible;
+}
+@media screen and (max-width: 450px) {
+  .body {
+    margin: auto 1vw;
+  }
+  .container {
+    margin: 1vh auto;
+    width: fit-content;
+    overflow-x: hidden;
+    height: auto;
+  }
+  .rs-wrapper {
+    width: min-content;
+  }
+  .ty-header {
+    flex-wrap: wrap;
+    white-space: normal;
+  }
+  .ty-selection {
+    display: flex;
+    white-space: nowrap;
+    font-size: 15px;
+  }
+  .ratings ul {
+  width: min-content;
+  }
+  .li1,
+  .li2,
+  .li3,
+  .li4 {
+    padding-left: 0rem;
+    padding-right: 0.5rem;
+  }
+}
+/*.ty-header {
+  flex-wrap: wrap;
+  white-space: normal;
+}
+.ty-selection {
+  display: flex;
+  white-space: nowrap;
+  font-size: 15px;
+}
+.ratings ul {
+width: min-content;
+}
+.li1,
+.li2,
+.li3,
+.li4 {
+  padding-left: 0rem;
+  padding-right: 0.5rem;
+}*/
